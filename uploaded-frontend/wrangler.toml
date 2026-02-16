@@ -1,0 +1,6 @@
+name = "cloudpaste-uploaded-frontend"
+compatibility_date = "2026-02-16"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"

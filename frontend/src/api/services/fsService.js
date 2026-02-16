@@ -164,6 +164,17 @@ export async function getFileLink(path, expiresIn = null, forceDownload = false)
 }
 
 /**
+ * 获取文件下载 URL（向后兼容别名）
+ * @param {string} path 文件路径
+ * @param {number|null} expiresIn 过期时间（秒）
+ * @param {boolean} forceDownload 是否强制下载
+ * @returns {Promise<string>} 下载 URL
+ */
+export async function getFileDownloadUrl(path, expiresIn = null, forceDownload = false) {
+  return getFileLink(path, expiresIn, forceDownload);
+}
+
+/**
  * 校验目录路径密码
  * @param {string} path 目标路径
  * @param {string} password 明文密码
@@ -877,4 +888,3 @@ export async function performClientSideCopy(options) {
  * @returns {Promise<Object>} 上传结果
  */
 /** @deprecated 旧版 FS 预签名上传流程，已被 Uppy + StorageAdapter 方案取代 */
-
